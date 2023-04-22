@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pacesetters contact form</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+
+    
+    <div class="container">
+        <header>
+            Registration
+        </header>
+        <div class="flex">
+            <button class="btn1">
+                <span class="btntext1"><a href="index.html">Back</a></span>
+                <i class="uil uil-navigator1"></i>
+            </button>
+    </div>
+        <form method="post">
+            <div class="form first">
+
+                <div class="detail personal">
+                    <span id="per" class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>FULL NAME</label>
+                            <input id="name" type="text" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date of birth</label>
+                            <input id="date" type="date" placeholder="Enter your date of birth" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input id="email" type="email" placeholder="Enter your Email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>MOBILE NUMBER</label>
+                            <input id="number" type="number" placeholder="Enter MOBILE NUMBER" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>GENDER</label>
+                            <input id="gender" type="text" placeholder="Enter your GENDER" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Grade</label>
+                            <input id="grade" type="text" placeholder="Enter your GRADE" required>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="detail ID">
+                    <span id="det" class="title"> Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Father's Name</label>
+                            <input id="fath" type="text" placeholder="Enter Father's Name">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Father's Number</label>
+                            <input id="fnn" type="number" placeholder="Enter Father's Number">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input id="fee" type="text" placeholder="Enter your Email" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mother's Name</label>
+                            <input id="moth" type="text" placeholder="Enter Mother's Name">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mother's Number</label>
+                            <input id="fmm" type="number" placeholder="Enter Mother's Number">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input id="mee" type="text" placeholder="Enter your Email" >
+                        </div>
+
+                        <button id="btn">
+                             send
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(e) {
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var web = document.getElementById('web').value;
+            var message = document.getElementById('message').value;
+            var body = 'per: '+per + '<br/> name: '+name + '<br/>date: '+date +'<br/> email: ' + email + '<br/> number: ' + number + '<br/> gender: ' +gender + '<br/> grade: ' + grade + '<br/> det: ' +det + '<br/> fath: ' +fath + '<br/> fnn ' + fnn + '<br/> fee' +fee + '<br/> moth: ' +moth + '<br/> fmm: ' +fmm + '<br/> mee: ' +mee;
+
+
+            Email.send({
+                    SecureToken : "3796b72f-d3c0-4e61-9878-2004a9f61f55",
+                    To : 'pacesettertutorials@gmail.com',
+                    From : "onisurutejiritj@gmail.com",
+                    Subject : "contavt form",
+                    Body : body
+            }).then(
+                message => alert(message)
+            );
+
+
+        })
+    </script>
+    
+</body>
+</html>
